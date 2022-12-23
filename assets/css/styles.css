@@ -8,8 +8,10 @@ body {
     display: flex;
     justify-content: center;
     overflow: auto;
+    font-family: "Poppins";
 }
 
+/* part common */
 .main {
     width: 1440px;
     background-color: #fff;
@@ -21,43 +23,81 @@ body {
 
 .btn {
     border: none;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 28px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.title {
+    font-family: "Sen";
+}
+
+a {
+    text-decoration: none;
+}
+
+.hero__desc p {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 30px;
+    color: #5F5B53;
 }
 
 /* TODO: Header */
 .header {
+    height: 900px;
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
     background-color: #FFFCF4;
 }
 
-.header>.content {
+.header .content {
     padding: 36px 0 65px 0;
-    height: 900px;
 }
 
-.nav {
+/* TODO: Navigation for Header */
+.header .content .nav {
     display: flex;
     align-items: center;
 }
 
-ul {
+.nav .list-menu {
     margin-left: 512px;
+    margin-right: 70px;
     display: flex;
-    align-items: center;
 }
 
-ul>li+li {
+.nav .list-menu li+li {
     margin-left: 42px;
 }
 
-ul>li>a {
-    text-decoration: none;
+.nav .list-menu li a {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    color: #5F5B53;
 }
 
-.btn {
-    margin-left: 70px;
+.nav .list-menu li a.active {
+    font-weight: 600;
+    color: #171100;
+    position: relative;
+}
+
+.nav .list-menu li a.active::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 1px;
+    width: 12px;
+    height: 2px;
+    background: #171100;
+    border-radius: 1px;
+}
+
+.nav .btn {
     width: 144px;
     height: 49px;
     color: #fff;
@@ -65,19 +105,186 @@ ul>li>a {
     border-radius: 24.5px;
 }
 
-/* TODO: Hero */
+/* TODO: Hero for Header */
 .hero {
     margin-top: 65px;
     display: flex;
 }
 
-.hero .hero__img img {
+/* TODO: Image illustration for Hero */
+.hero .hero__img {
     width: 470px;
     height: 685px;
+    position: relative;
 }
 
-.hero>.hero__desc {
-    margin: 64px 0 63px 130px;
+.hero .hero__img img {
+    width: inherit;
+    height: inherit;
+    border-radius: 20px;
+}
+
+.hero .hero__img .list-courses {
+    position: absolute;
+    top: 393px;
+    right: -100px;
+    bottom: 48px;
+    left: 300px;
+    background: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0px 16px 32px rgba(0, 0, 0, 0.05);
+    padding: 24px 58px 24px 24px;
     display: flex;
     flex-direction: column;
+}
+
+.list-courses li {
+    display: flex;
+}
+
+.list-courses li+li {
+    margin-top: 14px;
+}
+
+.list-courses li .desc {
+    margin-left: 16px;
+}
+
+.list-courses li .desc .number {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 26px;
+    color: #5F5B53;
+}
+
+.list-courses li .desc .name {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 30px;
+    color: #171100;
+}
+
+.list-courses li .icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+}
+
+.list-courses li .icon img {
+    object-fit: none;
+}
+
+.list-courses li .icon-1 {
+    background: #FFF9E8;
+}
+
+.list-courses li .icon-2 {
+    background: #FCEFFF;
+}
+
+.list-courses li .icon-3 {
+    background: #EBEAFF;
+}
+
+/* TODO: Description for Hero */
+.hero .hero__desc {
+    margin: 64px 0 63px 230px;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero__desc .title {
+    font-family: "Sen";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 58px;
+    line-height: 68px;
+    letter-spacing: -0.02em;
+    color: #171100;
+}
+
+.hero__desc .desc {
+    margin-top: 22px;
+    margin-bottom: 38px;
+}
+
+.hero__desc .btn-action .see-courses {
+    background: #FFB900;
+    border-radius: 32px;
+    width: 180px;
+    height: 64px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 30px;
+    color: #FFFFFF;
+}
+
+.hero__desc .btn-action .watch-video {
+    margin-left: 24px;
+    margin-right: 10px;
+    background-color: transparent;
+    background: #FFFFFF;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.07);
+    color: var(--title_color);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.hero__desc .btn-action a {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 30px;
+    color: #171100;
+}
+
+.hero__desc p:nth-of-type(2) {
+    margin-top: 48px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 30px;
+    color: #5F5B53;
+}
+
+.hero__desc div:nth-child(5) {
+    margin-top: 8px;
+    display: flex;
+}
+
+.hero__desc div:nth-child(5) div {
+    display: flex;
+    align-items: center;
+}
+
+.hero__desc div:nth-child(5) div+div {
+    margin-left: 28px;
+}
+
+.hero__desc div:nth-child(5) span:first-child {
+    display: flex;
+    /* width: 173px; */
+    height: 54px;
+    font-family: 'Sen';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 44px;
+    line-height: 54px;
+    color: #171100;
+}
+
+/* TODO: Courses */
+.courses .content {
+    margin: 200px 135px;
+}
+
+.courses .content .list-card {
+    display: flex;
+    gap: 30px;
+}
+
+.list-card .card-item {
+    border: 1px solid #E2DFDA;
+    border-radius: 12px;
+    width: 370px;
+    height: 466px;
 }
